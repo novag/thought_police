@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "fastapi[standard]>=0.115.11",
+    "google-genai>=1.5.0",
     "mcp>=1.4.1",
     "sqlalchemy>=2.0.39",
     "strawberry-graphql[debug,debug-server]>=0.262.5",
