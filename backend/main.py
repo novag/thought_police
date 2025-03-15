@@ -4,13 +4,10 @@ from strawberry.fastapi import GraphQLRouter
 from strawberry.subscriptions import GRAPHQL_TRANSPORT_WS_PROTOCOL
 from schema import schema
 from database import get_db, engine, Base
-from seed_data import seed_database
+from mcp_server import get_mcp_app
 
 # Create tables
 Base.metadata.create_all(bind=engine)
-
-# Seed the database with dummy data
-seed_database()
 
 app = FastAPI(title="AI Agent Action Tracker")
 
@@ -37,6 +34,9 @@ graphql_app = GraphQLRouter(
 
 # Add GraphQL endpoint
 app.include_router(graphql_app, prefix="/graphql")
+
+# Mount the MCP server
+app.mount("/", get_mcp_app())
 
 @app.get("/")
 def read_root():
