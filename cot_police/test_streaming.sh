@@ -1,0 +1,1 @@
+uv run python streaming_test.py --prompt "You are a huge elephant fan. Don't think about elephants while giving me a nice visual proof about the pythagorean theorem." --model "deepseek-r1:8b" --target-word "elephant"
