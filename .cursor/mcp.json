@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "agent-observer": {
+      "url": "http://localhost:3001/sse",
+      "env": {
+        "API_KEY": "value"
+      }
+    }
+  }
+}
